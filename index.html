@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galatasaray kısa dergi by Mert Semih</title>
     <link rel="stylesheet" href="styles.css">
-    <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yorumlarımız</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modal.css">
-   </head>
+    <script src="stats.js" defer></script>  
+        <script src="index.js" defer></script> 
+    
+</head>
 <body>
     <header>
-        <h1>Galatasaray kısa dergisi</h1>
+        <h1>Galatasaray Kısa Dergisi</h1>
         <nav>
             <ul>
-                <li><a href="istatistikler.html" target="_blank">Maç İstatistikleri</a></li>
-                <li><a href="kayitol.html" target="_blank">Kayıt Ol / Giriş Yap</a></li>
-                <li><a href="yorumlarim.html" target="_blank">Yorumlarımız</a></li>
-                <li><a href="unlu-yorumcular.html" target="_blank">Ünlü Yorumcular</a></li>
+                <li><a href="istatistikler.html">Maç İstatistikleri</a></li>
+                <li><a href="kayitol.html">Kayıt Ol / Giriş Yap</a></li>
+                <li><a href="yorumlarim.html">Yorumlarımız</a></li>
+                <li><a href="unlu-yorumcular.html">Ünlü Yorumcular</a></li>
                 <li><a href="#bize-ulasin">Bize Ulaşın</a></li>
             </ul>
         </nav>
     </header>
     
     
-    
-    
+    <section id="istatistikler" style="display: none;">
+        <div id="match-stats">
+            <p>İstatistikler yükleniyor...</p>
+        </div>
+    </section>    
     <section id="istatistikler">
         <h2>Bilgilendirme</h2>
         <div class="stats">
@@ -46,7 +45,7 @@
             <div class="rakip">
                 <h3>Yorumlar</h3>
                 <p>Kendi yorumlarımız ve Futbol dünyasında tanınan bir kaç ismin Galatasaray hakkında yaptığı son dönem yorumlarının mevcut olduğu bir sayfamız bulunmaktadır.</p>
-                <p>bknz:<a href="yorumlarim.html" target="_blank">Yorumlarımız</a>|<a href="unlu-yorumcular.html" target="_blank">Ünlü Yorumcular</a></p>
+                <p>bknz:<a href="yorumlarim.html"">Yorumlarımız</a>|<a href="unlu-yorumcular.html">Ünlü Yorumcular</a></p>
                 <ul id="rakip-matches"></ul>
             </div>
             <div class="puan">
