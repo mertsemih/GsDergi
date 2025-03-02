@@ -16,14 +16,53 @@ function hideImage() {
     setTimeout(() => { modal.style.display = "none"; }, 300); // Animasyon bitince tamamen gizle
 }
 
-// Sayfa yüklendiğinde kapatma olaylarını ekle
-document.addEventListener("DOMContentLoaded", function () {
-    let modal = document.getElementById("resimModal");
+// Sayfa değiştirme fonksiyonu
+function showPage(pageId) {
+    let pages = document.querySelectorAll("section");
+    pages.forEach(page => page.style.display = "none"); // Tüm bölümleri gizle
+    document.getElementById(pageId).style.display = "block"; // Seçili sayfayı göster
 
-    // Modalın dışına tıklanınca kapat
-    modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            hideImage();
+    // Eğer "istatistikler" açıldıysa veri çekme fonksiyonunu çalıştır
+    if (pageId === "istatistikler") {
+        fetchMatchStats(); // stats.js içindeki fonksiyon
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 🛠️ fetchMatchStats fonksiyonu tanımlı mı kontrol et
+    if (typeof fetchMatchStats !== "function") {
+        console.error("⚠️ HATA: fetchMatchStats fonksiyonu bulunamadı! stats.js düzgün yüklenmiş mi kontrol et.");
+        return;
+    }
+
+    // Sayfa değiştirme fonksiyonu
+    function showPage(pageId) {
+        let pages = document.querySelectorAll("section");
+        pages.forEach(page => page.style.display = "none"); // Tüm bölümleri gizle
+        document.getElementById(pageId).style.display = "block"; // Seçili sayfayı göster
+
+        // Eğer "istatistikler" açıldıysa veri çekme fonksiyonunu çalıştır
+        if (pageId === "istatistikler") {
+            fetchMatchStats();
+        }
+    }
+
+    // Menüye tıklama olaylarını ekleyelim
+    document.querySelector('nav').addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            let targetPage = event.target.getAttribute('href').replace('.html', ''); // ID'yi al
+
+            // Eğer iç sayfa ise yönlendirme yapmadan içeriği değiştir
+            if (document.getElementById(targetPage)) {
+                event.preventDefault(); // Varsayılan yönlendirmeyi engelle
+                showPage(targetPage);
+            }
         }
     });
+
+   
 });
+
+
+    
+
