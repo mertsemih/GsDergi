@@ -6,6 +6,48 @@ body {
     text-align: center;
     position: relative;
 }
+form {
+    background: white;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input ve textarea kutularının stilini belirle */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Butonun şık görünmesi için */
+button {
+    background: #c8102e;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Butonun üzerine gelindiğinde */
+button:hover {
+    background: #e68900;
+}
+
+/* Sonuç mesajı için */
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
 header {
     background-color: #c8102e;
     color: white;
