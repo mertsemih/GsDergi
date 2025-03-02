@@ -68,20 +68,28 @@
     </section>
     
     <section id="bize-ulasin">
-        <h2>Bize Ulaşın</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Adınız" required>
-            <input type="email" placeholder="E-posta" required>
-            <textarea placeholder="Mesajınız" required></textarea>
+        <h2>Bizimle İletişime Geçin</h2>
+        <form id="contact-form">
+            <label for="name">Adınız:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">E-Posta:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Mesajınız:</label>
+            <textarea id="message" name="message" required></textarea>
+    
             <button type="submit">Gönder</button>
         </form>
-    </section>
     
+        <p id="result"></p> <!-- Burada başarılı/başarısız mesaj gösterilecek -->
+    </section>
     <footer>
         <p>&copy; 2024/2025 GS Maçı Blog by Mert Semih</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="bizeulas.js" defer></script> 
     <script src="index.js">
-       
-    </script>
+        </script>
 </body>
 </html>
