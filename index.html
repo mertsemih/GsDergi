@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galatasaray kısa dergi by Mert Semih</title>
+    <link rel="stylesheet" href="styles.css">
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorumlarımız</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+   </head>
+<body>
+    <header>
+        <h1>Galatasaray kısa dergisi</h1>
+        <nav>
+            <ul>
+                <li><a href="istatistikler.html" target="_blank">Maç İstatistikleri</a></li>
+                <li><a href="kayitol.html" target="_blank">Kayıt Ol / Giriş Yap</a></li>
+                <li><a href="yorumlarim.html" target="_blank">Yorumlarımız</a></li>
+                <li><a href="unlu-yorumcular.html" target="_blank">Ünlü Yorumcular</a></li>
+                <li><a href="#bize-ulasin">Bize Ulaşın</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    
+    <section id="istatistikler">
+        <h2>Bilgilendirme</h2>
+        <div class="stats">
+            <div class="gs">
+                <h3>Site Hakkında</h3>
+                <p>Sitemiz de geçtiğimiz sezonun Galatasaray maç verilerinin bulunduğu bir kısım bulunmaktadır.
+                    <br>Bu sezona dair yorumlar bulunmaktadır.
+                    <br>Tamamen kişisel olarak skor tahminlerimiz bulunmaktadır.
+                    <br>Bu ve bunlara benzer veriler ile yorumlar bulunan sitemizde kendimizi geliştirmemiz için bize ulaşabilirsiniz.
+                </p>
+                <p></p>
+            </div>
+            <div class="rakip">
+                <h3>Yorumlar</h3>
+                <p>Kendi yorumlarımız ve Futbol dünyasında tanınan bir kaç ismin Galatasaray hakkında yaptığı son dönem yorumlarının mevcut olduğu bir sayfamız bulunmaktadır.</p>
+                <p>bknz:<a href="yorumlarim.html" target="_blank">Yorumlarımız</a>|<a href="unlu-yorumcular.html" target="_blank">Ünlü Yorumcular</a></p>
+                <ul id="rakip-matches"></ul>
+            </div>
+            <div class="puan">
+                <h3>Puan Durumu</h3>
+                <p>
+                    <img src="https://img.piri.net/mnresize/900/-/resim/upload/2023/03/20/e046c40fpuan.puan" 
+                      onclick="showImage(this)" 
+                      height="256" 
+                      width="200" 
+                      id="puanResmi" 
+                      style="cursor: pointer;">
+                </p>
+                
+                <!-- Büyütülmüş resim için modal -->
+                <div id="resimModal" class="modal">
+                    <span class="close-btn" onclick="hideImage()">&times;</span>
+                    <img id="buyutulmusResim">
+                </div>
+                
+    </section>
+    
+    <section id="bize-ulasin">
+        <h2>Bize Ulaşın</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Adınız" required>
+            <input type="email" placeholder="E-posta" required>
+            <textarea placeholder="Mesajınız" required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024/2025 GS Maçı Blog by Mert Semih</p>
+    </footer>
+    <script src="index.js">
+       
+    </script>
+</body>
+</html>
