@@ -1,17 +1,23 @@
 async function fetchMatchStats() {
     const url = "https://v3.football.api-sports.io/fixtures?league=203&season=2023";
-    const apiKey = "45dc472609381931830a0602554f5574"; // Buraya kendi API anahtarını yaz
+    const apiKey = "45dc472609381931830a0602554f5574"; 
+
+    // 🛠️ "match-stats" ID'si olan öğeyi kontrol et
+    const statsContainer = document.getElementById("match-stats");
+    if (!statsContainer) {
+        console.error("⚠️ HATA: 'match-stats' ID'li öğe bulunamadı!");
+        return;
+    }
 
     try {
         const response = await fetch(url, {
             method: "GET",
-            headers: {
-                "x-apisports-key": apiKey
-            }
+            headers: { "x-apisports-key": apiKey }
         });
+
         const data = await response.json();
         let statsHTML = "<h2>Galatasaray Maç İstatistikleri</h2>";
-        
+
         data.response.forEach(match => {
             if (match.teams.home.name === "Galatasaray" || match.teams.away.name === "Galatasaray") {
                 statsHTML += `
@@ -26,11 +32,10 @@ async function fetchMatchStats() {
                 `;
             }
         });
-        
-        document.getElementById("match-stats").innerHTML = statsHTML;
+
+        statsContainer.innerHTML = statsHTML;
     } catch (error) {
         console.error("Hata:", error);
-        document.getElementById("match-stats").innerHTML = "Veri çekilirken hata oluştu.";
+        statsContainer.innerHTML = "Veri çekilirken hata oluştu.";
     }
 }
-fetchMatchStats();
